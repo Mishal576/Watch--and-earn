@@ -2,7 +2,7 @@ let points = Number(localStorage.getItem('points') || 0);
 const pointsEl = document.getElementById('points');
 const message = document.getElementById('message');
 
-function render(){ pointsEl.textContent = points.toLocaleString(); localStorage.setItem('points', points); }
+function render(){ pointsEl.textContent = points.toLocaleString(); localStorage.setItem('points', 
 document.querySelectorAll('.task').forEach(btn=>{
   btn.addEventListener('click',()=>{
     points += Number(btn.dataset.points);
