@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Watch & Earn</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="logo">💰 Watch<span>&Earn</span></div><button id="loginBtn">Login</button></header>
+<main>
+<section class="hero"><h1>Watch. Earn. Redeem.</h1><p>Complete available sponsored tasks and collect points.</p><div class="balance"><small>Your balance</small><strong id="points">0</strong> points</div></section>
+<section><h2>Available Tasks</h2><div class="cards">
+<article class="card"><div class="icon">▶️</div><h3>Watch a sponsored video</h3><p>Complete the task and earn points.</p><button class="task" data-points="10">Start • +10 points</button></article>
+<article class="card"><div class="icon">📱</div><h3>Try a sponsored offer</h3><p>Offers will appear here after an ad/offer network is connected.</p><button class="task" data-points="25">Demo task • +25 points</button></article>
+<article class="card"><div class="icon">🎁</div><h3>Daily bonus</h3><p>Claim your daily bonus once per day.</p><button id="daily">Claim • +5 points</button></article>
+</div></section>
+<section class="withdraw"><h2>Withdraw</h2><p>Minimum withdrawal: 1,000 points</p><div class="withdraw-row"><select id="method"><option>JazzCash</option><option>Easypaisa</option><option>Bank Transfer</option></select><input id="account" placeholder="Account / wallet number"><button id="withdraw">Request withdrawal</button></div><p id="message" class="message"></p></section>
+<section class="note"><strong>Important:</strong> This is a working front-end demo. Real ad revenue requires connecting a legitimate rewarded-ad/offer provider and server-side completion callbacks.</section>
+</main><script src="app.js"></script>
+</body></html>
