@@ -1,9 +1,7 @@
 let balance = 0;
 let watched = 0;
 
-function watchVideo(reward = 10) {
-    const button = event.target;
-
+function watchVideo(button, reward = 10) {
     button.disabled = true;
     button.innerText = "Watching...";
 
