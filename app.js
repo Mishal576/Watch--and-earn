@@ -1,5 +1,5 @@
 const SUPABASE_URL = "https://ccozqqfewgufacjvtfdo.supabase.co";
-const SUPABASE_KEY = "YOUR_PUBLISHABLE_KEY";
+const SUPABASE_KEY = "sb_publishable_yO2rmPc3pKAX7omKIarZCw_M8R7Ej8G";
 
 async function loadVideos() {
   try {
