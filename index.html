@@ -16,7 +16,12 @@
       💰 Watch<span>&Earn</span>
     </div>
 
-    <button id="loginBtn">Login</button>
+    <button
+      id="loginBtn"
+      onclick="document.getElementById('authBox').style.display='block';"
+    >
+      Login
+    </button>
   </header>
 
   <main>
@@ -33,45 +38,61 @@
       </button>
     </section>
 
+    <!-- LOGIN / SIGN UP -->
+    <section id="authBox" style="display:none;">
+
+      <h2>Login / Sign Up</h2>
+
+      <input
+        type="email"
+        id="emailInput"
+        placeholder="Email"
+      >
+
+      <input
+        type="password"
+        id="passwordInput"
+        placeholder="Password"
+      >
+
+      <button id="signupBtn">
+        Sign Up
+      </button>
+
+      <button id="emailLoginBtn">
+        Login
+      </button>
+
+      <p id="authMessage"></p>
+
+    </section>
+
+    <!-- STATS -->
     <section class="stats">
 
       <div class="card">
-        <h2>🪙 0</h2>
+        <h2 id="points">🪙 0</h2>
         <p>Your Coins</p>
       </div>
 
       <div class="card">
-        <h2>🎬 0</h2>
+        <h2 id="videosWatched">🎬 0</h2>
         <p>Videos Watched</p>
       </div>
 
       <div class="card">
-        <h2>💵 $0.00</h2>
+        <h2 id="earnings">💵 $0.00</h2>
         <p>Your Earnings</p>
       </div>
 
     </section>
 
+    <!-- VIDEOS -->
     <section class="videos">
 
       <h2>Available Videos</h2>
 
-      <div class="video-card">
-
-        <div class="video-thumbnail">
-          ▶️
-        </div>
-
-        <div class="video-info">
-          <h3>Watch & Earn Video</h3>
-          <p>Watch this video and earn coins.</p>
-
-          <button class="watchBtn">
-            Watch Video
-          </button>
-        </div>
-
-      </div>
+      <div id="videos"></div>
 
     </section>
 
