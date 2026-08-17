@@ -127,3 +127,23 @@ button:hover {
         gap: 10px;
     }
 }
+#authBox {
+    display: none;
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 15px;
+}
+
+#authBox input {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+}
+
+#authBox button {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+}
