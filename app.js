@@ -1,26 +1,55 @@
-let balance = 0;
-let watched = 0;
+const SUPABASE_URL = "https://ccozqqfewgufacjvtfdo.supabase.co";
+const SUPABASE_KEY = "YOUR_PUBLISHABLE_KEY";
 
-function watchVideo(button, reward = 10) {
-    button.disabled = true;
-    button.innerText = "Watching...";
+async function loadVideos() {
+  try {
+    const response = await fetch(
+      `${SUPABASE_URL}/rest/v1/videos?select=*`,
+      {
+        headers: {
+          apikey: SUPABASE_KEY,
+          Authorization: `Bearer ${SUPABASE_KEY}`
+        }
+      }
+    );
 
-    setTimeout(() => {
-        balance += reward;
-        watched += 1;
-
-        document.getElementById("balance").innerText = balance;
-        document.getElementById("watched").innerText = watched;
-
-        button.innerText = `Earned ${reward} Coins`;
-    }, 10000);
-}
-
-function withdraw() {
-    if (balance < 1000) {
-        alert("Minimum withdrawal is 1000 coins.");
-        return;
+    if (!response.ok) {
+      throw new Error("Failed to load videos");
     }
 
-    alert("Withdrawal request submitted!");
+    const videos = await response.json();
+
+    console.log("Videos:", videos);
+
+    const container =
+      document.querySelector("#videos") ||
+      document.querySelector(".videos");
+
+    if (!container) {
+      console.log("Video container not found");
+      return;
+    }
+
+    container.innerHTML = "";
+
+    videos.forEach(video => {
+      const card = document.createElement("div");
+      card.className = "video-card";
+
+      card.innerHTML = `
+        <h3>${video.title}</h3>
+        <p>Reward: $${video.reward}</p>
+        <a href="${video.url}" target="_blank">
+          Watch Video
+        </a>
+      `;
+
+      container.appendChild(card);
+    });
+
+  } catch (error) {
+    console.error(error);
+  }
 }
+
+loadVideos();
